@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../service/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class QuestScreen extends StatelessWidget {
+  const QuestScreen({Key? key}) : super(key: key);
 
-  static List<UserInfo> userInfo = Utils.getUserInfo();
+  static List<QuestUserInfo> questUserInfo = Utils.getQuestUserInfo();
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class MainScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _topSearchBar(),
               const SizedBox(
@@ -57,34 +58,12 @@ class MainScreen extends StatelessWidget {
   }
 
   Widget _followTab() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text(
-          'Подписки',
+        Text(
+          'Квесты',
           style: TextStyle(fontSize: 20),
-        ),
-        SizedBox(
-          height: 70,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: userInfo.length,
-            itemBuilder: (BuildContext ctx, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Image.asset(
-                      'assets/img/avatar_${userInfo[index].avatarName}.png',
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
         ),
       ],
     );
@@ -93,7 +72,7 @@ class MainScreen extends StatelessWidget {
   Widget _postsFeed() {
     return Expanded(
       child: ListView.builder(
-        itemCount: 6,
+        itemCount: 2,
         itemBuilder: (BuildContext ctx, int index) {
           return Container(
             child: Column(
@@ -105,13 +84,13 @@ class MainScreen extends StatelessWidget {
                       width: 40,
                       height: 40,
                       child: Image.asset(
-                        'assets/img/avatar_${userInfo[index].avatarName}.png',
+                        'assets/img/avatar_${questUserInfo[index].avatarName}.png',
                       ),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    Text(userInfo[index].username)
+                    Text(questUserInfo[index].username)
                   ],
                 ),
                 const SizedBox(
@@ -119,7 +98,7 @@ class MainScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () async {
-                    final url = Uri.parse(userInfo[index].modelUrl);
+                    final url = Uri.parse(questUserInfo[index].modelUrl);
                     if (await canLaunchUrl(url)) {
                       await launchUrl(url,
                           mode: LaunchMode.externalApplication);
@@ -132,7 +111,7 @@ class MainScreen extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
-                          'assets/img/img_${userInfo[index].imgName}.png'),
+                          'assets/img/QuestImg/quest_img_${questUserInfo[index].imgName}.png'),
                     ),
                   ),
                 ),
@@ -140,7 +119,7 @@ class MainScreen extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  '${userInfo[index].username}: ${userInfo[index].description}',
+                  '${questUserInfo[index].username}: ${questUserInfo[index].description}',
                   textAlign: TextAlign.start,
                 ),
                 const SizedBox(height: 36),

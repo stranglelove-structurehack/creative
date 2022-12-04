@@ -4,6 +4,9 @@ import 'package:structura_hack/screens/MapScreen.dart';
 import 'package:structura_hack/service/navigation_bar_icons_icons.dart';
 
 import '../screens/MainScreen.dart';
+import '../screens/ModelScreen.dart';
+import '../screens/ProfileScreen.dart';
+import '../screens/QuestScreen.dart';
 
 class CustomNavigationBar extends StatefulWidget {
   CustomNavigationBar({Key? key}) : super(key: key);
@@ -13,19 +16,20 @@ class CustomNavigationBar extends StatefulWidget {
 }
 
 class _CustomNavigationBar extends State<CustomNavigationBar> {
-  int selectedPage = 0;
+  int selectedPage = 2;
 
   static const List<Widget> widgetOptions = <Widget>[
+    QuestScreen(),
+    ModelScreen(),
     MainScreen(),
     MapScreen(),
-    MapScreen(),
-    MapScreen(),
-    MapScreen(),
+    ProfileScreen(),
   ];
 
   void onSelectTab(int index) {
     setState(() => selectedPage = index);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,13 +56,13 @@ class _CustomNavigationBar extends State<CustomNavigationBar> {
                   icon: NavigationBarIcons.screen1,
                 ),
                 GButton(
-                  icon:  NavigationBarIcons.screen2,
+                  icon: NavigationBarIcons.screen2,
                 ),
                 GButton(
-                  icon:  NavigationBarIcons.screen3,
+                  icon: NavigationBarIcons.screen3,
                 ),
                 GButton(
-                  icon:  NavigationBarIcons.screen4,
+                  icon: NavigationBarIcons.screen4,
                 ),
               ],
               selectedIndex: selectedPage,
@@ -66,7 +70,6 @@ class _CustomNavigationBar extends State<CustomNavigationBar> {
             ),
           ),
         ),
-        body: widgetOptions[selectedPage]
-    );
+        body: widgetOptions[selectedPage]);
   }
 }

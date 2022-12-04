@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../service/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class ModelScreen extends StatelessWidget {
+  const ModelScreen({Key? key}) : super(key: key);
 
   static List<UserInfo> userInfo = Utils.getUserInfo();
 
@@ -57,34 +57,12 @@ class MainScreen extends StatelessWidget {
   }
 
   Widget _followTab() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text(
-          'Подписки',
+        Text(
+          '3D Модели',
           style: TextStyle(fontSize: 20),
-        ),
-        SizedBox(
-          height: 70,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: userInfo.length,
-            itemBuilder: (BuildContext ctx, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: Image.asset(
-                      'assets/img/avatar_${userInfo[index].avatarName}.png',
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
         ),
       ],
     );
@@ -93,7 +71,7 @@ class MainScreen extends StatelessWidget {
   Widget _postsFeed() {
     return Expanded(
       child: ListView.builder(
-        itemCount: 6,
+        itemCount: 4,
         itemBuilder: (BuildContext ctx, int index) {
           return Container(
             child: Column(
