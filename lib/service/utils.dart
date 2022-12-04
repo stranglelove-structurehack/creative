@@ -57,7 +57,7 @@ class Utils {
           adress: '',
           likesCount: 327,
           commentCount: 23,
-          modelUrl: 'https://studio.arloopa.com/en/web-ar/shark_37045'
+          modelUrl: 'https://studio.arloopa.com/en/web-ar/strangelove-logo_37078'
       ),
       UserInfo(
         id: 0,
@@ -69,7 +69,7 @@ class Utils {
         adress: '',
         likesCount: 327,
         commentCount: 23,
-        modelUrl: 'https://studio.arloopa.com/en/web-ar/shark_37045'
+        modelUrl: 'https://studio.arloopa.com/en/web-ar/shipbottle_37051'
       ),
       UserInfo(
         id: 1,
@@ -103,7 +103,7 @@ class Utils {
         adress: '',
         likesCount: 327,
         commentCount: 23,
-        modelUrl: 'https://studio.arloopa.com/en/web-ar/shark_37045'
+        modelUrl: 'https://studio.arloopa.com/en/web-ar/shipbottle_37051'
       ),
       UserInfo(
         id: 4,
@@ -160,7 +160,7 @@ class Utils {
           adress: '',
           likesCount: 327,
           commentCount: 23,
-          modelUrl: 'https://studio.arloopa.com/en/web-ar/shark_37045'
+          modelUrl: 'https://studio.arloopa.com/en/web-ar/strangelove-logo_37078'
       ),
       QuestUserInfo(
           username: 'MyPersonalJesus',

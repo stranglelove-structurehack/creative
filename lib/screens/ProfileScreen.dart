@@ -132,52 +132,63 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _postsFeed() {
-    return Container(
-      width: 370,
-      height: 350,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          Container(
-            child: Image.asset('assets/img/img_MyPersonalJesus.png',
-                fit: BoxFit.fill),
-          ),
-          Container(
-            width: 370,
-            height: 100,
+    return InkWell(
+      onTap: () async {
+        final url = Uri.parse('https://studio.arloopa.com/en/web-ar/strangelove-logo_37078');
+        if (await canLaunchUrl(url)) {
+          await launchUrl(url,
+              mode: LaunchMode.externalApplication);
+        } else {
+          throw 'Could not launch $url';
+        }
+      },
+      child: Container(
+        width: 370,
+        height: 350,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            Container(
+              child: Image.asset('assets/img/img_MyPersonalJesus.png',
+                  fit: BoxFit.fill),
+            ),
+            Container(
+              width: 370,
+              height: 100,
 
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),            color: Colors.white,),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),            color: Colors.white,),
 
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text('Robot'),
-                      Row(
-                        children: [
-                          Container(
-                            width: 20,
-                            height: 20,
-                            child: Image.asset('assets/img/avatar_test0.png'),
-                          ),
-                          Text('Жукова Эвелина'),
-                        ],
-                      )
-                    ],
-                  ),
-                  Text(
-                    '\$15 usd',
-                    style: TextStyle(fontSize: 25),
-                  ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text('Robot'),
+                        Row(
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              child: Image.asset('assets/img/avatar_test0.png'),
+                            ),
+                            Text('Жукова Эвелина'),
+                          ],
+                        )
+                      ],
+                    ),
+                    Text(
+                      '\$15 usd',
+                      style: TextStyle(fontSize: 25),
+                    ),
 
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
