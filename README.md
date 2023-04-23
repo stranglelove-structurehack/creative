@@ -17,7 +17,7 @@
 🟣 Ultimately, "Creative" is a powerful tool for 3D artists that leverages the latest AR technology to bring their creations to life in the real world, providing a unique and compelling way to experience digital art.
 
 ## Exploitation
-🧷 Android  - [APK](https://drive.google.com/file/d/1jcvjXM7IgsmgrOjJQjFbN73BnlsrMdfd/view?usp=sharing)<br />
+🧷 Android  - [APK](https://drive.google.com/file/d/1syseiS53U3DsJx9CcD5gJXQvTmH32tgd/view?usp=sharing)<br />
 🧷 IOS  - ask [@tw0ch](https://t.me/tw0ch) for TestFlight
 
 ## Application Development
